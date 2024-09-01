@@ -135,4 +135,4 @@ Subsequently, an equivalent definition of Gateaux differentiability of \\(f \\) 
 
 $$\delta_af(\psi) = \lim_{\tau \to 0}\frac{f(a+\tau\psi) - f(a)}{\tau}$$
 
-If such a linear operator \\(\delta_af \\) exists, we designate it as the \\(\colorbox{yellow}{\text{Gateaux derivative of} f \text{at} a} \\). The proof of uniqueness of the Fréchet derivative of a function at a point can easily be extended to prove uniqueness of the Gateaux derivative of a function at a point.
+If such a linear operator \\(\delta_af \\) exists, we designate it as the \\(\colorbox{yellow}{Gateaux derivative of \\(f \\) at \\(a \\)} \\). The proof of uniqueness of the Fréchet derivative of a function at a point can easily be extended to prove uniqueness of the Gateaux derivative of a function at a point.
