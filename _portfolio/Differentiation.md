@@ -57,7 +57,7 @@ $$\Leftrightarrow \exists h \in X : L_1(h) - L_2(h) \neq \mathbf{0}$$
 
 Because a sum of linear operators is also a linear operator, and the preimage of any non-zero vector, under a linear operator, must be a non-zero vector, this statement is logically equivalent to:
 
-$$\Leftrightarrow \exists h\ in X : 0 < \Vert h \Vert \wedge \frac{\Vert (L_1 - L_2)(h) \Vert}{\Vert h \Vert} > 0$$
+$$\Leftrightarrow \exists h \in X : 0 < \Vert h \Vert \wedge \frac{\Vert (L_1 - L_2)(h) \Vert}{\Vert h \Vert} > 0$$
 
 Because the image of a non-zero vector, under a linear operator, is a non-zero vector, the image of any non-zero scalar multiple of a non-zero vector, under a linear operator, is also a non-zero vector. This implies that the above statement is logically equivalent to:
 
