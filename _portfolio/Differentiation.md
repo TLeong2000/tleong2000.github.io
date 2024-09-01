@@ -37,13 +37,13 @@ Let \\(f \\) be a function from a Banach space \\(X \\) to another Banach space 
 
 We can finally synthesize a definition of differentiation for multivariable functions:
 
-Let \\(f \\) be a function \\(V \subseteq X \rightarrow Y \\), where \\(X \\) and \\(Y \\) are Banach spaces. For any \\(a \in V \\) we define \\(f \\) to be <mark>Fréchet-differentiable</mark> if and only if there exists a bounded linear transformation \\(T_{a}f : X \rightarrow Y \\) such that the remainder quotient converges to \\(0 \\) as the displacement \\(h \\) goes to \\(0 \\):
+Let \\(f \\) be a function \\(V \subseteq X \rightarrow Y \\), where \\(X \\) and \\(Y \\) are Banach spaces. For any \\(a \in V \\) we define \\(f \\) to be \\(\colorbox{yellow}{Fréchet-differentiable at \\(a \\)} \\) if and only if there exists a bounded linear transformation \\(T_{a}f : X \rightarrow Y \\) such that the remainder quotient converges to \\(0 \\) as the displacement \\(h \\) goes to \\(0 \\):
 
 $$\lim_{\left\Vert h \right\Vert \to 0} \frac{\left\Vert f(a+h) - f(a) - T_{a}f(h) \right\Vert}{\left\Vert h \right\Vert} = 0$$
 
 $$\Leftrightarrow (\forall \epsilon > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Vert h \Vert < \delta \Rightarrow \Vert f(a+h) - f(a) - T_af(h) \Vert < \epsilon \Vert h \Vert $$
 
-If such a linear transformation exists, we designate it the <mark>Fréchet derivative of \\(f \\) at \\(a \\)</mark>. It is sometimes designated as the total derivative. Within physics and engineering contexts, the Fréchet derivative may also be referred to as the gradient, although within mathematical contexts, the word gradient is restricted to the dual vectors of the Fréchet derivatives of functions \\(\mathbb{R}^n \rightarrow \mathbb{R}\\). For functions \\(\mathbb{R}^n \rightarrow \mathbb{R}^m \\), the Fréchet derivative may be referred to as the Jacobian.
+If such a linear transformation exists, we designate it the \\(\colorbox{yellow}{Fréchet derivative of \\(f \\) at \\(a \\)} \\). It is sometimes designated as the total derivative. Within physics and engineering contexts, the Fréchet derivative may also be referred to as the gradient, although within mathematical contexts, the word gradient is restricted to the dual vectors of the Fréchet derivatives of functions \\(\mathbb{R}^n \rightarrow \mathbb{R}\\). For functions \\(\mathbb{R}^n \rightarrow \mathbb{R}^m \\), the Fréchet derivative may be referred to as the Jacobian.
 
 ### Uniqueness
 
@@ -119,7 +119,7 @@ However, what if we want to consider a displacement in each direction that occur
 
 Let \\(f : V \subseteq X \rightarrow Y \\) be a function between arbitrary Banach spaces. We can describe a displacement along a certain direction as a scalar multiple \\(\tau \\) of the unit vector \\(\psi \\) corresponding to said direction.
 
-\\(\forall a \in V : \\) We define \\(f \\) to be <mark>Gateaux-differentiable at \\(a \in V \\)</mark> if and only if there exists a bounded linear operator \\(\delta_af : X \rightarrow Y \\) such that \\(\forall \tau \psi \in X \\), the remainder quotient converges to \\(0 \\) as \\(\tau \psi \\) goes to \\(0 \\):
+\\(\forall a \in V : \\) We define \\(f \\) to be \\(\colorbox{yellow]{Gateaux-differentiable at \\(a \in V \\)} \\) if and only if there exists a bounded linear operator \\(\delta_af : X \rightarrow Y \\) such that \\(\forall \tau \psi \in X \\), the remainder quotient converges to \\(0 \\) as \\(\tau \psi \\) goes to \\(0 \\):
 
 $$\lim_{\Vert \tau \psi \Vert \to 0} \frac{\Vert f(a + \tau \psi) - f(a) - \delta_af(\tau \psi) \Vert}{\Vert \tau \psi \Vert} = 0$$
 
@@ -136,3 +136,23 @@ Subsequently, an equivalent definition of Gateaux differentiability of \\(f \\) 
 $$\delta_af(\psi) = \lim_{\tau \to 0}\frac{f(a+\tau\psi) - f(a)}{\tau}$$
 
 If such a linear operator \\(\delta_af \\) exists, we designate it as the \\(\colorbox{yellow}{Gateaux derivative of \\(f \\) at \\(a \\)} \\). The proof of uniqueness of the Fréchet derivative of a function at a point can easily be extended to prove uniqueness of the Gateaux derivative of a function at a point.
+
+
+
+You may be wondering: "What does this have to do with Fréchet differentiation?"
+
+Let \\(f \\) be Fréchet-differentiable at a point \\(a \in V \\). By definition of Fréchet differentiability, the following statement is true:
+
+$$(\forall \epsilon > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Vert h \Vert < \delta \Rightarrow \Vert f(a+h) - f(a) - T_af(h) \Vert < \epsilon \Vert h \Vert$$
+
+Now \\(\forall h \in X \\), we can re-write \\(h \\) as itself scalar multiplied by \\(1 \\), which is equal to itself scalar multiplied by its norm divided by its norm.
+
+Let us define the variables \\(\tau := \Vert h \Vert \\) and \\(\psi := \frac{h}{\Vert h \Vert} \\). Obviously, \\(\frac{\Vert h \Vert}{\Vert h \Vert}h = \tau \psi \\). We can now re-write the statement of Fréchet differentiability as:
+
+$$\Leftrightarrow (\forall \epsilon > 0)(\exists \delta > 0)(\forall \tau\psi \in X) : 0 < |\tau| < \delta \Rightarrow \Vert f(a+\tau\psi) - f(a) - T_af(\tau\psi) \Vert < \epsilon |\tau|$$
+
+$$\Leftrightarrow (\forall \epsilon > 0)(\exists \delta > 0)(\forall \tau\psi \in X) : 0 < |\tau| < \delta \Rightarrow \Vert \frac{f(a+\tau\psi) - f(a)}{\tau} - T_af(\psi) \Vert < \epsilon $$
+
+Note that the only logical difference between the above statement and the definition of Gateaux differentiability is the scope of the quantifiers: for the above statement, the quantifier \\(\left(\forall\tau\psi \in X \right)\\) is within the scope of the quantifier \\(\left(\exists \delta > 0 \right) \\), whereas in the definition of Gateaux differentiability, \\(\left(\exists \delta > 0 \right) \\) is within the scope of \\(\left(\forall\tau\psi \in X \right)\\).
+
+Because \\(\exists x \forall y : \Phi (x,y) \Rightarrow \forall y \exists x : \Phi (x,y) \\), the above statement implies that \\(f \\) must be Gateaux-differentiable at \\(a \\). Since the Fréchet derivative is a bounded linear operator and satisfies this statement, if \\(f \\) is Fréchet-differentiable at \\(a \\), then the Gateaux derivative of \\(f \\) at \\(a \\) must be equal to the Fréchet derivative of \\(f \\) at \\(a \\). \\(\tombstone \\)
