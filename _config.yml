@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "tleong2000 / Math Notes of a non-Math Student"
+title                    : "tleong2000 / Personal Notes"
 title_separator          : "-"
 name                     : &name "Timothy Leong"
-description              : &description "A site where I contain some special notes I have on math topics"
+description              : &description "A site for my notes, publications, and other academia-related topics."
 url                      : https://tleong2000.github.io # the base hostname & protocol for your site e.g. "https://mmistake.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tleong2000/tleong2000.github.io"
