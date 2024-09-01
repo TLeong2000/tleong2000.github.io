@@ -14,11 +14,11 @@ $$\Leftrightarrow (\forall \epsilon > 0)(\forall \delta > 0) : 0 < |h| < \delta 
 
 ...we immediately run into issues.
 
-First, because the domain is vector-valued, that means that \(h\) must also be vector-valued as well. However, because it is impossible to define a multiplication operation for an arbitrary vector space that is isomorphic to multiplication of real numbers, it is also impossible to define a division operation for an arbitrary vector space that is isomorphic to division of real numbers. We need to come up with a concept of derivative that does not involve dividing two vectors.
+First, because the domain is vector-valued, that means that \\(h \\) must also be vector-valued as well. However, because it is impossible to define a multiplication operation for an arbitrary vector space that is isomorphic to multiplication of real numbers, it is also impossible to define a division operation for an arbitrary vector space that is isomorphic to division of real numbers. We need to come up with a concept of derivative that does not involve dividing two vectors.
 
-There is one concept that we can exploit to form a sensible definition of derivative that works regardless of whatever vector space the domain or codomain of \(f\) happens to be: a norm.
+There is one concept that we can exploit to form a sensible definition of derivative that works regardless of whatever vector space the domain or codomain of \\(f \\) happens to be: a norm.
 
-Notice that the absolute value in the consequent in the \(ϵ-δ\) definition of the derivative of a single-variable function can be re-written as a quotient of two absolute values:
+Notice that the absolute value in the consequent in the \\(ϵ-δ \\) definition of the derivative of a single-variable function can be re-written as a quotient of two absolute values:
 
 $$ \left|\frac{f(x+h) - f(x)}{h} - f'(x)\right|= \left|\frac{f(x+h) - f(x) - f'(x)\ast h}{h}\right| = \frac{\left|f(x+h) - f(x) - f'(x) \ast h \right|}{\left|h \right|} $$
 
@@ -30,7 +30,7 @@ However, we aren't done yet: notice that the numerator of our new consequent con
 
 First, notice that for single-variable functions, the image of \\(x \in X \\) under \\(f' \\), aka \\(f'(x) \\), is a scalar. Given any scalar, multiplication of that scalar by another scalar is a linear transformation \\(\mathbb{R} \rightarrow \mathbb{R} \\), and because \\(h \in X \subseteq \mathbb{R} \\), we can say that \\(f'(x) \\) linearly transforms \\(h \\). The concept of linear transformation is what we will need to generalize differentiation and is what will allow us to extend the concept of tangent lines to tangent spaces.
 
-Let \\(f \\) be a function from a Banach space \\(X \\) to another Banach space \\(Y \\). \\(\forall x,h \in X :$ if $f(x+h)\) and \(f(x)\) are defined, then \(f(x+h) \in Y \wedge f(x) \in Y \\), and therefore \\(f(x+h)-f(x) \\) is a well-defined object that resides in \\(Y \\). If we want \\(f(x+h) - f(x) - \left(f'(x) \right)(h) \\) to be a well-defined object, then \\(f'(x) \\) needs to be a linear transformation \\(X \rightarrow Y \\).
+Let \\(f \\) be a function from a Banach space \\(X \\) to another Banach space \\(Y \\). \\(\forall x,h \in X :\\) if \\($f(x+h)\\) and \\(f(x)\\) are defined, then \\(f(x+h) \in Y \wedge f(x) \in Y \\), and therefore \\(f(x+h)-f(x) \\) is a well-defined object that resides in \\(Y \\). If we want \\(f(x+h) - f(x) - \left(f'(x) \right)(h) \\) to be a well-defined object, then \\(f'(x) \\) needs to be a linear transformation \\(X \rightarrow Y \\).
 
 
 ## Fréchet Derivatives
