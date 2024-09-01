@@ -85,3 +85,28 @@ This proves that if $L_1 \neq L_2$, they cannot both be Fréchet derivatives of 
 
 > [!NOTE]
 > As of the time I wrote this, I had yet to see anyone present a completely rigorous proof of this theorem - every "proof" I had seen of this theorem jumps from $\lim_{\Vert h \Vert \to 0} \frac{\Vert (L_1-L_2)(h) \Vert}{\Vert h \Vert} = 0$ to $L_1 = L_2$ without explaining anything in-between.
+
+### Continuity of Differentiable Functions
+For functions $\mathbb{R} \rightarrow \mathbb{R}$, you are already aware that differentiability implies continuity. Does this still hold for functions on arbitrary Banach spaces?
+
+We start with the definition of Fréchet differentiability:
+
+$$(\forall \epsilon > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Vert h \Vert < \delta \Rightarrow \Vert f(a+h) - f(a) -T_af(h) \Vert < \epsilon \Vert h \Vert$$
+
+Let us add $\Vert T_af(h) \Vert$ to both sides of the consequent, and use Triangle Inequality to get:
+
+$$\Leftrightarrow (\forall \epsilon > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Vert h \Vert < \delta \Rightarrow \Vert f(a+h) - f(a) \Vert < \epsilon \Vert h \Vert + \Vert T_af(h) \Vert$$
+
+Because $T_af$ must be a bounded linear operator, there must exist a non-negative real number $C$ such that $\forall h \in X : \Vert T_af(h) \Vert \leq  C \Vert h \Vert $. Therefore, the previous statement is equivalent to:
+
+$$\Leftrightarrow (\forall \epsilon > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Vert h \Vert < \delta \Rightarrow \Vert f(a+h) - f(a) \Vert < \Vert h \Vert \left(\epsilon + C\right) $$
+
+Note that whenever the antecedent is true, the consequent implies that $\Vert h \Vert \left(\epsilon + C\right) < \delta \left(\epsilon + C\right)$.
+
+Let us now define a new variable $\eta := \delta (\epsilon + C)$. Note that $\delta > 0 \wedge \epsilon > 0 \Rightarrow \eta > 0$. Therefore, we conclude with:
+
+$$\Rightarrow (\forall \eta > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Vert h \Vert < \delta \Rightarrow \Vert f(a+h)-f(a) \Vert < \eta$$
+
+This proves that Fréchet differentiability of a function at a point implies continuity of that function at that point. $\blacksquare$
+
+However, as with functions $\mathbb{R} \rightarrow \mathbb{R}$, continuity at a point for functions between arbitrary Banach spaces is a necessary but insufficient condition for differentiability.
