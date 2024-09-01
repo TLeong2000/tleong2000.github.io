@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "tleong2000 / Math Notes of a non-Math Student"
 title_separator          : "-"
 name                     : &name "Timothy Leong"
 description              : &description "A site where I contain some special notes I have on math topics"
