@@ -110,3 +110,29 @@ $$\Rightarrow (\forall \eta > 0)(\exists \delta > 0)(\forall h \in X) : 0 < \Ver
 This proves that Fréchet differentiability of a function at a point implies continuity of that function at that point. \\(\blacksquare \\)
 
 However, as with functions \\(\mathbb{R} \rightarrow \mathbb{R} \\), continuity at a point for functions between arbitrary Banach spaces is a necessary but insufficient condition for differentiability.
+
+### Gateaux Derivatives
+
+The definition of Fréchet derivative involves a vector \\(h\\) that represents a displacement in all directions at once.
+
+However, what if we want to consider a displacement in each direction that occurs one direction at-a-time?
+
+Let \\(f : V \subseteq X \rightarrow Y \\) be a function between arbitrary Banach spaces. We can describe a displacement along a certain direction as a scalar multiple \\(\tau \\) of the unit vector \\(\psi \\) corresponding to said direction.
+
+\\(\forall a \in V : \\) We define \\(f \\) to be <mark>Gateaux-differentiable at \\(a \in V \\)</mark> if and only if there exists a bounded linear operator \\(\delta_af : X \rightarrow Y \\) such that \\(\forall \tau \psi \in X \\), the remainder quotient converges to \\(0 \\) as \\(\tau \psi \\) goes to \\(0 \\):
+
+$$\lim_{\Vert \tau \psi \Vert \to 0} \frac{\Vert f(a + \tau \psi) - f(a) - \delta_af(\tau \psi) \Vert}{\Vert \tau \psi \Vert} = 0$$
+
+$$\Leftrightarrow \left( \forall(\tau \psi) \in X \right)(\forall \epsilon > 0)(\exists \delta > 0) : 0 < \Vert \tau \psi \Vert < \delta \Rightarrow \Vert f(a + \tau \psi) - f(a) - \delta_af(\tau \psi) \Vert < \epsilon \Vert \tau \psi \Vert$$
+
+Because we defined \\(\psi \\) to be a unit vector and \\(\tau \\) to be a scalar, this is equivalent to:
+
+$$\Leftrightarrow \left( \forall(\tau \psi) \in X \right)(\forall \epsilon > 0)(\exists \delta > 0) : 0 < |\tau| < \delta \Rightarrow \frac{\Vert f(a + \tau \psi) - f(a) - \tau\delta_af(\psi) \Vert}{|\tau|} < \epsilon $$
+
+$$\Leftrightarrow \left( \forall(\tau \psi) \in X \right)(\forall \epsilon > 0)(\exists \delta > 0) : 0 < |\tau| < \delta \Rightarrow \Vert \frac{f(a + \tau \psi) - f(a)}{\tau} - \delta_af(\psi) \Vert < \epsilon $$
+
+Subsequently, an equivalent definition of Gateaux differentiability of \\(f \\) at \\(a \\) is the existence of a bounded linear operator \\(\delta_af : X \rightarrow Y \\) such that \\(\forall \psi \in X : \\) the image of \\(\psi \\) under \\(\delta_af \\) is equal to the limit of the difference quotient of \\(f \\) at \\(a \\) in the direction of \\(\psi \\):
+
+$$\delta_af(\psi) = \lim_{\tau \to 0}\frac{f(a+\tau\psi) - f(a)}{\tau}
+
+If such a linear operator \\(\delta_af \\) exists, we designate it as the <mark>Gateaux derivative of \\(f \\) at \\(a \\)</mark>. The proof of uniqueness of the Fréchet derivative of a function at a point can easily be extended to prove uniqueness of the Gateaux derivative of a function at a point.
